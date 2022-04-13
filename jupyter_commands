@@ -1,0 +1,8 @@
+jupyter_setup() {
+  sudo semanage fcontext -a -t container_file_t $(pwd)\(/.*\)?
+  sudo restorecon -R -v $(pwd)
+}
+
+jupyterlab() {
+  podman run --rm -v $(pwd):/data -p 8888:8888 --net host --name jupyterlab jupyterlab:latest
+}
