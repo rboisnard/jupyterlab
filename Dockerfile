@@ -8,6 +8,7 @@ RUN  dnf install -y         \
   && pip3 install --upgrade \
       jupyterlab            \
       matplotlib            \
+      numpy                 \
       pandas                \
       seaborn
 
